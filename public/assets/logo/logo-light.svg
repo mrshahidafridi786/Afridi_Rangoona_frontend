@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 84" width="460" height="84" fill="none">
+  <!-- AFRIDI RANGOONA Light Version - Designed for Dark Backgrounds (#171717) -->
+  <defs>
+    <linearGradient id="lightGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F2DEC0"/>
+      <stop offset="50%" stop-color="#C8A56A"/>
+      <stop offset="100%" stop-color="#A0793D"/>
+    </linearGradient>
+    <linearGradient id="lightOrange" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E8874E"/>
+      <stop offset="100%" stop-color="#C66A32"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Monogram Crest -->
+  <g transform="translate(14, 8)">
+    <rect x="33" y="1" width="46" height="46" rx="8" transform="rotate(45 33 1)" stroke="url(#lightGold)" stroke-width="2.5" fill="#202020"/>
+    <rect x="33" y="7" width="37" height="37" rx="5" transform="rotate(45 33 7)" stroke="#C66A32" stroke-width="1.2" stroke-opacity="0.8" fill="none"/>
+    
+    <path d="M23 48 L33 20 L38 20 L27 48 Z" fill="url(#lightGold)"/>
+    <path d="M33 20 L43 48 L37.5 48 L34.5 39 L27.5 39 L31.5 28 Z" fill="url(#lightGold)"/>
+    <path d="M27 38 L38 38 L37 35 L28 35 Z" fill="#E8874E"/>
+    <path d="M33 20 C40 20 45 23 45 28 C45 33 40 36 34 36 L33 36 Z" fill="url(#lightGold)"/>
+    <path d="M33 23 C37 23 41 24.5 41 28 C41 31.5 37 33 33 33 Z" fill="#202020"/>
+    <path d="M37 35 L45 48 L39 48 L32.5 37 Z" fill="url(#lightOrange)"/>
+    <polygon points="33,10 35,14 39,15 36,18 37,22 33,20 29,22 30,18 27,15 31,14" fill="#C8A56A"/>
+  </g>
+
+  <!-- Brand Typography for Dark Backgrounds -->
+  <g transform="translate(94, 24)">
+    <text x="0" y="24" font-family="'Cinzel', 'Playfair Display', 'Bodoni MT', 'Times New Roman', serif" font-size="24" font-weight="700" letter-spacing="4.5" fill="#F8F5EF">
+      AFRIDI
+    </text>
+    <text x="135" y="24" font-family="'Cinzel', 'Playfair Display', 'Bodoni MT', 'Times New Roman', serif" font-size="24" font-weight="400" letter-spacing="4.5" fill="#E8874E">
+      RANGOONA
+    </text>
+
+    <text x="1.5" y="42" font-family="'Inter', 'Montserrat', 'Helvetica Neue', sans-serif" font-size="8.5" font-weight="600" letter-spacing="6.8" fill="#B3B3B3">
+      HERITAGE &amp; COUTURE
+    </text>
+
+    <line x1="210" y1="39" x2="340" y2="39" stroke="#C8A56A" stroke-width="0.8" stroke-opacity="0.7"/>
+  </g>
+</svg>

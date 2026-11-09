@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80" fill="none">
+  <!-- AFRIDI RANGOONA Icon-Only Luxury Monogram Crest -->
+  <defs>
+    <linearGradient id="iconGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E2C999"/>
+      <stop offset="50%" stop-color="#C8A56A"/>
+      <stop offset="100%" stop-color="#9C773D"/>
+    </linearGradient>
+    <linearGradient id="iconOrange" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#DF7B40"/>
+      <stop offset="100%" stop-color="#A54F1C"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="80" height="80" rx="16" fill="#171717"/>
+
+  <!-- Outer Diamond Crest Frame -->
+  <rect x="40" y="8" width="45" height="45" rx="7" transform="rotate(45 40 8)" stroke="url(#iconGold)" stroke-width="2.5" fill="#1E1E1E"/>
+  <!-- Inner Border Line -->
+  <rect x="40" y="14" width="37" height="37" rx="5" transform="rotate(45 40 14)" stroke="#C66A32" stroke-width="1.2" stroke-opacity="0.75" fill="none"/>
+
+  <!-- Monogram Interlocking AR -->
+  <!-- Left Leg of A -->
+  <path d="M28 58 L40 25 L46 25 L33 58 Z" fill="url(#iconGold)"/>
+  <!-- Right Leg of A and Core Spine of R -->
+  <path d="M40 25 L52 58 L45.5 58 L41.5 47 L33.5 47 L38 34 Z" fill="url(#iconGold)"/>
+  <!-- Horizontal Crossbar -->
+  <path d="M33 46 L46 46 L45 42 L34 42 Z" fill="#C66A32"/>
+  <!-- Upper Curve of R -->
+  <path d="M40 25 C49 25 55 29 55 35 C55 41 49 44 42 44 L40 44 Z" fill="url(#iconGold)"/>
+  <path d="M40 29 C46 29 50 31 50 35 C50 39 46 40 40 40 Z" fill="#1E1E1E"/>
+  <!-- Diagonal Tail of R -->
+  <path d="M45 43 L55 58 L48 58 L39.5 45 Z" fill="url(#iconOrange)"/>
+
+  <!-- Top Star Accent -->
+  <polygon points="40,16 42.5,21 47.5,22 43.5,25.5 45,30.5 40,28 35,30.5 36.5,25.5 32.5,22 37.5,21" fill="#C8A56A"/>
+</svg>
