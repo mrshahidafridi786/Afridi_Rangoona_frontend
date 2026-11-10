@@ -1,4 +1,22 @@
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '/api/v1';
+const PRODUCTION_API_URL = 'https://afridi-rangoona-backend.vercel.app/api/v1';
+
+const resolveApiBaseUrl = () => {
+  const envUrl = import.meta.env.VITE_API_BASE_URL;
+  const isLocalHost =
+    typeof window !== 'undefined' &&
+    ['localhost', '127.0.0.1'].includes(window.location.hostname);
+
+  if (!isLocalHost) {
+    if (envUrl && !envUrl.includes('localhost') && !envUrl.includes('127.0.0.1')) {
+      return envUrl;
+    }
+    return PRODUCTION_API_URL;
+  }
+
+  return envUrl || '/api/v1';
+};
+
+const API_BASE_URL = resolveApiBaseUrl();
 
 class ApiService {
   constructor() {

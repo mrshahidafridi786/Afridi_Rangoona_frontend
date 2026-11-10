@@ -2,13 +2,15 @@
 node_modules/
 .pnp
 .pnp.js
+.vercel
 
 # Build Output
 dist/
 dist-ssr/
 *.local
 
-# Environment Files
+# Environment Files (keep .env.production & .env.example tracked; keep local overrides untracked)
+.env
 .env.local
 .env.*.local
 
