@@ -139,16 +139,16 @@ const Checkout = () => {
         </div>
 
         {/* Step Indicator */}
-        <div style={{ maxWidth: '480px', margin: '0 auto var(--space-8)', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 'var(--space-4)' }}>
+        <div style={{ maxWidth: '480px', margin: '0 auto var(--space-8)', display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center', gap: 'var(--space-3)' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontWeight: 'bold', fontSize: 'var(--font-size-xs)', textTransform: 'uppercase', color: step === 1 ? 'var(--color-primary)' : 'var(--color-success)' }}>
-            <span style={{ width: '24px', height: '24px', borderRadius: '50%', backgroundColor: step === 1 ? 'var(--color-primary)' : 'var(--color-success)', color: '#FFF', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <span style={{ width: '24px', height: '24px', borderRadius: '50%', backgroundColor: step === 1 ? 'var(--color-primary)' : 'var(--color-success)', color: '#FFF', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
               1
             </span>
             Shipping Information
           </div>
           <span style={{ color: 'var(--color-border-dark)' }}>&bull;&bull;&bull;</span>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontWeight: 'bold', fontSize: 'var(--font-size-xs)', textTransform: 'uppercase', color: step === 2 ? 'var(--color-primary)' : 'var(--color-text-muted)' }}>
-            <span style={{ width: '24px', height: '24px', borderRadius: '50%', backgroundColor: step === 2 ? 'var(--color-primary)' : '#DDD', color: step === 2 ? '#FFF' : '#666', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <span style={{ width: '24px', height: '24px', borderRadius: '50%', backgroundColor: step === 2 ? 'var(--color-primary)' : '#DDD', color: step === 2 ? '#FFF' : '#666', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
               2
             </span>
             Payment &amp; Review
@@ -251,7 +251,7 @@ const Checkout = () => {
                 </div>
               </form>
             ) : (
-              <div className="card" style={{ padding: 'var(--space-8)' }}>
+              <div className="card" style={{ padding: 'clamp(var(--space-4), 3vw, var(--space-8))' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)', marginBottom: 'var(--space-6)' }}>
                   <CreditCard size={22} color="var(--color-accent)" />
                   <h3 style={{ fontSize: 'var(--font-size-lg)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>

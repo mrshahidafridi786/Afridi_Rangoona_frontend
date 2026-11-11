@@ -83,34 +83,36 @@ const AdminCustomerDetail = () => {
         {orders.length === 0 ? (
           <p style={{ color: '#888', fontSize: 'var(--font-size-xs)' }}>No orders placed by this customer yet.</p>
         ) : (
-          <table style={{ width: '100%', fontSize: 'var(--font-size-xs)', borderCollapse: 'collapse', textAlign: 'left', color: '#DDD' }}>
-            <thead>
-              <tr style={{ color: '#888', textTransform: 'uppercase', borderBottom: '1px solid #333' }}>
-                <th style={{ padding: '8px 10px' }}>Order #</th>
-                <th style={{ padding: '8px 10px' }}>Date</th>
-                <th style={{ padding: '8px 10px' }}>Amount</th>
-                <th style={{ padding: '8px 10px' }}>Status</th>
-                <th style={{ padding: '8px 10px', textAlign: 'right' }}>Inspect</th>
-              </tr>
-            </thead>
-            <tbody>
-              {orders.map((o) => (
-                <tr key={o._id} style={{ borderBottom: '1px solid #2B2B2B' }}>
-                  <td style={{ padding: '10px', fontWeight: 'bold' }}>{o.orderNumber}</td>
-                  <td style={{ padding: '10px', color: '#888' }}>{new Date(o.createdAt).toLocaleDateString()}</td>
-                  <td style={{ padding: '10px', fontWeight: 'bold' }}>PKR {o.totalAmount.toLocaleString()}</td>
-                  <td style={{ padding: '10px' }}>
-                    <Badge status={o.orderStatus}>{o.orderStatus}</Badge>
-                  </td>
-                  <td style={{ padding: '10px', textAlign: 'right' }}>
-                    <Link to={`/admin/orders/${o._id}`} style={{ color: 'var(--color-gold)' }}>
-                      View Order &rarr;
-                    </Link>
-                  </td>
+          <div style={{ overflowX: 'auto', WebkitOverflowScrolling: 'touch' }}>
+            <table style={{ width: '100%', minWidth: '520px', fontSize: 'var(--font-size-xs)', borderCollapse: 'collapse', textAlign: 'left', color: '#DDD' }}>
+              <thead>
+                <tr style={{ color: '#888', textTransform: 'uppercase', borderBottom: '1px solid #333' }}>
+                  <th style={{ padding: '8px 10px' }}>Order #</th>
+                  <th style={{ padding: '8px 10px' }}>Date</th>
+                  <th style={{ padding: '8px 10px' }}>Amount</th>
+                  <th style={{ padding: '8px 10px' }}>Status</th>
+                  <th style={{ padding: '8px 10px', textAlign: 'right' }}>Inspect</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {orders.map((o) => (
+                  <tr key={o._id} style={{ borderBottom: '1px solid #2B2B2B' }}>
+                    <td style={{ padding: '10px', fontWeight: 'bold' }}>{o.orderNumber}</td>
+                    <td style={{ padding: '10px', color: '#888' }}>{new Date(o.createdAt).toLocaleDateString()}</td>
+                    <td style={{ padding: '10px', fontWeight: 'bold' }}>PKR {o.totalAmount.toLocaleString()}</td>
+                    <td style={{ padding: '10px' }}>
+                      <Badge status={o.orderStatus}>{o.orderStatus}</Badge>
+                    </td>
+                    <td style={{ padding: '10px', textAlign: 'right' }}>
+                      <Link to={`/admin/orders/${o._id}`} style={{ color: 'var(--color-gold)' }}>
+                        View Order &rarr;
+                      </Link>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         )}
       </div>
     </div>

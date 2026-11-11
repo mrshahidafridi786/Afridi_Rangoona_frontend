@@ -132,16 +132,16 @@ const Shop = () => {
           }}
         >
           {/* Quick Search */}
-          <form onSubmit={handleApplyFilters} style={{ display: 'flex', gap: 'var(--space-2)', flexGrow: 1, maxWidth: '420px' }}>
+          <form onSubmit={handleApplyFilters} style={{ display: 'flex', gap: 'var(--space-2)', flex: '1 1 260px', width: '100%', maxWidth: '460px', minWidth: 0 }}>
             <input
               type="text"
               placeholder="Search by name, fabric, or style (e.g. Swat, Charsadda, Kaptaan)..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               className="form-input"
-              style={{ padding: '8px 12px' }}
+              style={{ padding: '8px 12px', minWidth: 0, flexGrow: 1 }}
             />
-            <button type="submit" className="btn btn-primary btn-sm" aria-label="Search">
+            <button type="submit" className="btn btn-primary btn-sm" aria-label="Search" style={{ flexShrink: 0 }}>
               <Search size={16} />
             </button>
           </form>

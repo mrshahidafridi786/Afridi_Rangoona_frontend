@@ -330,7 +330,7 @@ const AdminAddProduct = () => {
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-2)' }}>
             {specifications.map((s, idx) => (
-              <div key={idx} style={{ display: 'grid', gridTemplateColumns: '1fr 1.5fr 40px', gap: 'var(--space-2)', alignItems: 'center' }}>
+              <div key={idx} className="admin-spec-row">
                 <input
                   type="text"
                   placeholder="Label (e.g. Origin)"
@@ -360,7 +360,7 @@ const AdminAddProduct = () => {
           </div>
         </div>
 
-        <div style={{ display: 'flex', justifyContent: 'flex-end', gap: 'var(--space-4)', marginTop: 'var(--space-8)' }}>
+        <div style={{ display: 'flex', justifyContent: 'flex-end', flexWrap: 'wrap', gap: 'var(--space-4)', marginTop: 'var(--space-8)' }}>
           <Link to="/admin/products" className="btn btn-ghost" style={{ color: '#AAA' }}>
             Cancel
           </Link>

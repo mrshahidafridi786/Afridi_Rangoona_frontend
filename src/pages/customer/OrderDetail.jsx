@@ -156,8 +156,8 @@ const OrderDetail = () => {
             )}
           </div>
         ) : (
-          <div className="card" style={{ padding: 'var(--space-6)', backgroundColor: '#FDF2F2', borderColor: '#FCA5A5', marginBottom: 'var(--space-8)', display: 'flex', alignItems: 'center', gap: 'var(--space-4)' }}>
-            <XCircle size={32} color="var(--color-danger)" />
+          <div className="card" style={{ padding: 'clamp(var(--space-4), 3vw, var(--space-6))', backgroundColor: '#FDF2F2', borderColor: '#FCA5A5', marginBottom: 'var(--space-8)', display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 'var(--space-4)' }}>
+            <XCircle size={32} color="var(--color-danger)" style={{ flexShrink: 0 }} />
             <div>
               <h4 style={{ color: 'var(--color-danger)', fontSize: 'var(--font-size-sm)' }}>Order Cancelled</h4>
               <p style={{ fontSize: 'var(--font-size-xs)', color: '#7F1D1D' }}>
@@ -282,8 +282,8 @@ const OrderDetail = () => {
 
       {/* Cancellation Dialog Modal */}
       {cancelModalOpen && (
-        <div className="overlay anim-fade-in" onClick={() => setCancelModalOpen(false)}>
-          <div className="card anim-slide-up" onClick={(e) => e.stopPropagation()} style={{ maxWidth: '480px', width: '90%', margin: '15vh auto', padding: 'var(--space-6)' }}>
+        <div className="overlay anim-fade-in" onClick={() => setCancelModalOpen(false)} style={{ padding: 'var(--space-4)', overflowY: 'auto' }}>
+          <div className="card anim-slide-up" onClick={(e) => e.stopPropagation()} style={{ maxWidth: '480px', width: '100%', margin: '10vh auto', padding: 'clamp(var(--space-4), 4vw, var(--space-6))', maxHeight: '85vh', overflowY: 'auto' }}>
             <h3 style={{ marginBottom: 'var(--space-2)' }}>Cancel Order</h3>
             <p style={{ fontSize: 'var(--font-size-xs)', color: 'var(--color-text-secondary)', marginBottom: 'var(--space-4)' }}>
               Are you sure you wish to cancel order <strong>{order.orderNumber}</strong>? Reserved inventory will be returned to the catalog immediately.
@@ -300,7 +300,7 @@ const OrderDetail = () => {
               />
             </div>
 
-            <div style={{ display: 'flex', justifyContent: 'flex-end', gap: 'var(--space-3)', marginTop: 'var(--space-6)' }}>
+            <div style={{ display: 'flex', justifyContent: 'flex-end', flexWrap: 'wrap', gap: 'var(--space-3)', marginTop: 'var(--space-6)' }}>
               <button type="button" onClick={() => setCancelModalOpen(false)} className="btn btn-ghost">
                 Keep Order
               </button>

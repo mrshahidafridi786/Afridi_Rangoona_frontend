@@ -316,7 +316,7 @@ const ProductDetail = () => {
                 </button>
               </div>
 
-              <div style={{ flexGrow: 1, minWidth: '200px' }}>
+              <div style={{ flex: '1 1 180px', minWidth: 0 }}>
                 <Button
                   variant="primary"
                   size="lg"
@@ -334,7 +334,7 @@ const ProductDetail = () => {
                 className="btn btn-outline"
                 onClick={() => toggleWishlist(product)}
                 aria-label="Wishlist"
-                style={{ padding: '0 18px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+                style={{ padding: '0 18px', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '46px' }}
               >
                 <Heart size={20} fill={inWish ? 'var(--color-accent)' : 'none'} color={inWish ? 'var(--color-accent)' : 'currentColor'} />
               </button>
@@ -343,15 +343,15 @@ const ProductDetail = () => {
             {/* Value Guarantees Accordion/Pillars */}
             <div style={{ backgroundColor: 'var(--color-surface)', border: '1px solid var(--color-border)', borderRadius: 'var(--radius-md)', padding: 'var(--space-4) var(--space-5)', display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)', fontSize: 'var(--font-size-xs)' }}>
-                <Truck size={18} color="var(--color-gold)" />
+                <Truck size={18} color="var(--color-gold)" style={{ flexShrink: 0 }} />
                 <span>Fast KPK delivery with Cash on Delivery (Free over PKR 5,000).</span>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)', fontSize: 'var(--font-size-xs)' }}>
-                <ShieldCheck size={18} color="var(--color-gold)" />
+                <ShieldCheck size={18} color="var(--color-gold)" style={{ flexShrink: 0 }} />
                 <span>100% Genuine KPK craft &mdash; Swat wool, pure leather &amp; original stitching.</span>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)', fontSize: 'var(--font-size-xs)' }}>
-                <RefreshCw size={18} color="var(--color-gold)" />
+                <RefreshCw size={18} color="var(--color-gold)" style={{ flexShrink: 0 }} />
                 <span>7-Day friendly size exchange under our Pakhtun Melmastia guarantee.</span>
               </div>
             </div>
@@ -362,12 +362,12 @@ const ProductDetail = () => {
                 <h4 style={{ fontSize: 'var(--font-size-xs)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: 'var(--space-3)' }}>
                   Craft &amp; Material Specifications
                 </h4>
-                <table style={{ width: '100%', fontSize: 'var(--font-size-xs)', borderCollapse: 'collapse' }}>
+                <table style={{ width: '100%', fontSize: 'var(--font-size-xs)', borderCollapse: 'collapse', tableLayout: 'fixed' }}>
                   <tbody>
                     {product.specifications.map((spec, i) => (
                       <tr key={i} style={{ borderBottom: '1px solid var(--color-border)' }}>
-                        <td style={{ padding: '8px 0', color: 'var(--color-text-secondary)', width: '40%' }}>{spec.label}</td>
-                        <td style={{ padding: '8px 0', fontWeight: 'bold' }}>{spec.value}</td>
+                        <td style={{ padding: '8px 8px 8px 0', color: 'var(--color-text-secondary)', width: '40%', wordBreak: 'break-word' }}>{spec.label}</td>
+                        <td style={{ padding: '8px 0', fontWeight: 'bold', wordBreak: 'break-word' }}>{spec.value}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -440,11 +440,11 @@ const ProductDetail = () => {
 
       {/* Review Submission Modal */}
       {reviewModalOpen && (
-        <div className="overlay anim-fade-in" onClick={() => setReviewModalOpen(false)}>
+        <div className="overlay anim-fade-in" onClick={() => setReviewModalOpen(false)} style={{ padding: 'var(--space-4)', overflowY: 'auto' }}>
           <div
             className="card anim-slide-up"
             onClick={(e) => e.stopPropagation()}
-            style={{ maxWidth: '520px', width: '90%', margin: '10vh auto', padding: 'var(--space-8)' }}
+            style={{ maxWidth: '520px', width: '100%', margin: '6vh auto', padding: 'clamp(var(--space-4), 4vw, var(--space-8))', maxHeight: '88vh', overflowY: 'auto' }}
           >
             <h3 style={{ marginBottom: 'var(--space-2)' }}>Write A Review</h3>
             <p style={{ fontSize: 'var(--font-size-xs)', color: 'var(--color-text-muted)', marginBottom: 'var(--space-6)' }}>
@@ -480,7 +480,7 @@ const ProductDetail = () => {
                 />
               </div>
 
-              <div style={{ display: 'flex', justifyContent: 'flex-end', gap: 'var(--space-3)', marginTop: 'var(--space-6)' }}>
+              <div style={{ display: 'flex', justifyContent: 'flex-end', flexWrap: 'wrap', gap: 'var(--space-3)', marginTop: 'var(--space-6)' }}>
                 <button type="button" onClick={() => setReviewModalOpen(false)} className="btn btn-ghost">
                   Cancel
                 </button>

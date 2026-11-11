@@ -47,17 +47,17 @@ const OrderConfirmation = () => {
         </div>
         
         {/* Success Header */}
-        <div className="card anim-slide-up" style={{ textAlign: 'center', padding: 'var(--space-10)', marginBottom: 'var(--space-8)' }}>
+        <div className="card anim-slide-up" style={{ textAlign: 'center', padding: 'clamp(var(--space-5), 4vw, var(--space-10))', marginBottom: 'var(--space-8)' }}>
           <CheckCircle size={60} color="var(--color-gold)" style={{ margin: '0 auto var(--space-4)' }} />
           <span className="eyebrow">Pakhair &bull; Order Confirmed</span>
-          <h1 style={{ fontSize: 'var(--font-size-3xl)', marginBottom: 'var(--space-2)' }}>
+          <h1 style={{ fontSize: 'clamp(1.5rem, 4vw, var(--font-size-3xl))', marginBottom: 'var(--space-2)' }}>
             Manana! Thank You For Your Trust
           </h1>
           <p style={{ color: 'var(--color-text-secondary)', fontSize: 'var(--font-size-base)', maxWidth: '520px', margin: '0 auto var(--space-6)' }}>
             Your order has been safely placed under reference <strong>{orderNumber}</strong>. Our KPK team is preparing your package with genuine care and will dispatch it to your doorstep.
           </p>
 
-          <div style={{ display: 'flex', justifyContent: 'center', gap: 'var(--space-4)' }}>
+          <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: 'var(--space-3)' }}>
             <Link to="/orders">
               <Button variant="primary">View In My Orders</Button>
             </Link>
@@ -69,8 +69,8 @@ const OrderConfirmation = () => {
 
         {/* Detailed Receipt Card if loaded */}
         {order && (
-          <div className="card" style={{ padding: 'var(--space-8)' }}>
-            <div className="flex-between" style={{ paddingBottom: 'var(--space-4)', borderBottom: '1px solid var(--color-border)', marginBottom: 'var(--space-6)' }}>
+          <div className="card" style={{ padding: 'clamp(var(--space-4), 3vw, var(--space-8))' }}>
+            <div className="flex-between" style={{ flexWrap: 'wrap', gap: 'var(--space-3)', paddingBottom: 'var(--space-4)', borderBottom: '1px solid var(--color-border)', marginBottom: 'var(--space-6)' }}>
               <div>
                 <h3 style={{ fontSize: 'var(--font-size-base)' }}>Order {order.orderNumber}</h3>
                 <p style={{ fontSize: 'var(--font-size-xs)', color: 'var(--color-text-muted)' }}>

@@ -115,7 +115,7 @@ const AdminDashboard = () => {
       </div>
 
       {/* Two Columns: Recent Orders + Leaderboard */}
-      <div style={{ display: 'grid', gridTemplateColumns: '1.4fr 1fr', gap: 'var(--space-8)' }}>
+      <div className="admin-dashboard-grid">
         
         {/* Left: Recent Orders Table */}
         <div style={{ backgroundColor: '#212121', border: '1px solid #333', borderRadius: 'var(--radius-md)', padding: 'var(--space-6)' }}>

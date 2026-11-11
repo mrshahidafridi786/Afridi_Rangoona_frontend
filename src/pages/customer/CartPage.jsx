@@ -36,7 +36,7 @@ const CartPage = () => {
         </div>
 
         {cart.items.length === 0 ? (
-          <div className="card" style={{ textAlign: 'center', padding: 'var(--space-16)' }}>
+          <div className="card" style={{ textAlign: 'center', padding: 'clamp(var(--space-6), 5vw, var(--space-16))' }}>
             <ShoppingBag size={56} color="var(--color-gold)" style={{ margin: '0 auto var(--space-4)', opacity: 0.4 }} />
             <h3>Your Bag is Empty</h3>
             <p style={{ color: 'var(--color-text-muted)', margin: 'var(--space-3) 0 var(--space-6)' }}>
@@ -74,13 +74,13 @@ const CartPage = () => {
                         }}
                       />
 
-                      <div style={{ flexGrow: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                      <div style={{ flexGrow: 1, minWidth: 0, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                         <div>
-                          <div className="flex-between">
+                          <div className="flex-between" style={{ flexWrap: 'wrap', gap: 'var(--space-2)' }}>
                             <Link to={`/product/${item.slug}`} style={{ fontWeight: 'bold', fontSize: 'var(--font-size-base)', fontFamily: 'var(--font-display)' }}>
                               {item.name}
                             </Link>
-                            <span style={{ fontWeight: 'bold', fontSize: 'var(--font-size-base)' }}>
+                            <span style={{ fontWeight: 'bold', fontSize: 'var(--font-size-base)', whiteSpace: 'nowrap' }}>
                               PKR {Number(item.subtotal || 0).toLocaleString()}
                             </span>
                           </div>
@@ -96,7 +96,7 @@ const CartPage = () => {
                           </p>
                         </div>
 
-                        <div className="flex-between" style={{ marginTop: 'var(--space-4)' }}>
+                        <div className="flex-between" style={{ marginTop: 'var(--space-4)', flexWrap: 'wrap', gap: 'var(--space-2)' }}>
                           <div style={{ display: 'inline-flex', alignItems: 'center', border: '1px solid var(--color-border)', borderRadius: 'var(--radius-xs)' }}>
                             <button
                               type="button"
@@ -132,7 +132,7 @@ const CartPage = () => {
                   ))}
                 </div>
 
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 'var(--space-6)' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 'var(--space-3)', marginTop: 'var(--space-6)' }}>
                   <Link to="/shop" style={{ fontSize: 'var(--font-size-xs)', textTransform: 'uppercase', color: 'var(--color-text-muted)' }}>
                     &larr; Continue Shopping
                   </Link>
@@ -149,20 +149,20 @@ const CartPage = () => {
 
             {/* Right: Order Summary Card */}
             <div>
-              <div className="card" style={{ padding: 'var(--space-6)', position: 'sticky', top: '100px' }}>
+              <div className="card sticky-desktop-card" style={{ padding: 'clamp(var(--space-4), 3vw, var(--space-6))' }}>
                 <h3 style={{ fontSize: 'var(--font-size-base)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: 'var(--space-4)' }}>
                   Order Summary
                 </h3>
 
                 {/* Promotional Coupon Input */}
-                <form onSubmit={handleCouponSubmit} style={{ display: 'flex', gap: 'var(--space-2)', marginBottom: 'var(--space-6)' }}>
+                <form onSubmit={handleCouponSubmit} style={{ display: 'flex', flexWrap: 'wrap', gap: 'var(--space-2)', marginBottom: 'var(--space-6)' }}>
                   <input
                     type="text"
                     placeholder="Coupon (e.g. WELCOME10)"
                     value={inputCoupon}
                     onChange={(e) => setInputCoupon(e.target.value)}
                     className="form-input"
-                    style={{ padding: '8px 12px', fontSize: 'var(--font-size-xs)' }}
+                    style={{ padding: '8px 12px', flex: '1 1 160px', minWidth: 0 }}
                   />
                   <Button type="submit" variant="primary" size="sm" loading={couponLoading}>
                     Apply

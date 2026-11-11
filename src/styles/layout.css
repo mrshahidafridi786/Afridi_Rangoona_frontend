@@ -9,8 +9,8 @@
   max-width: var(--container-max);
   margin-left: auto;
   margin-right: auto;
-  padding-left: var(--space-4);
-  padding-right: var(--space-4);
+  padding-left: var(--space-3);
+  padding-right: var(--space-3);
 }
 
 @media (min-width: 480px) {
@@ -21,6 +21,9 @@
 }
 
 @media (min-width: 768px) {
+  :root {
+    --header-height: 80px;
+  }
   .container {
     padding-left: var(--space-8);
     padding-right: var(--space-8);
@@ -269,6 +272,68 @@
   .account-layout-grid {
     grid-template-columns: 260px 1fr;
     gap: var(--space-8);
+  }
+}
+
+/* 6. Contact Page: Workshop Info + Message Form */
+.contact-layout-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+  align-items: start;
+}
+
+@media (min-width: 900px) {
+  .contact-layout-grid {
+    grid-template-columns: minmax(280px, 360px) 1fr;
+    gap: var(--space-10);
+  }
+}
+
+/* 7. Admin Dashboard: Recent Orders + Leaderboard */
+.admin-dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+}
+
+@media (min-width: 1024px) {
+  .admin-dashboard-grid {
+    grid-template-columns: 1.4fr 1fr;
+    gap: var(--space-8);
+  }
+}
+
+/* 8. Admin Craft Specification Rows */
+.admin-spec-row {
+  display: grid;
+  grid-template-columns: 1fr 40px;
+  gap: var(--space-2);
+  align-items: center;
+}
+
+.admin-spec-row > input:first-child {
+  grid-column: 1 / -1;
+}
+
+@media (min-width: 600px) {
+  .admin-spec-row {
+    grid-template-columns: 1fr 1.5fr 40px;
+  }
+  .admin-spec-row > input:first-child {
+    grid-column: auto;
+  }
+}
+
+/* 9. Desktop-only sticky summary cards */
+.sticky-desktop-card {
+  position: static;
+}
+
+@media (min-width: 992px) {
+  .sticky-desktop-card {
+    position: sticky;
+    top: 104px;
   }
 }
 

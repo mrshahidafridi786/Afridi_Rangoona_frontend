@@ -110,16 +110,18 @@ const Footer = () => {
                     border: '1px solid #383838',
                     color: '#F8F5EF',
                     padding: '8px 12px',
-                    fontSize: 'var(--font-size-xs)',
+                    fontSize: '16px',
                     borderRadius: 'var(--radius-sm)',
-                    flexGrow: 1
+                    flexGrow: 1,
+                    minWidth: 0,
+                    width: '100%'
                   }}
                 />
                 <button
                   type="submit"
                   className="btn btn-gold btn-sm"
                   aria-label="Subscribe"
-                  style={{ padding: '8px 14px' }}
+                  style={{ padding: '8px 14px', flexShrink: 0 }}
                 >
                   <ArrowRight size={16} />
                 </button>
@@ -130,7 +132,7 @@ const Footer = () => {
           {/* Bottom Copyright & Badges */}
           <div style={{ marginTop: 'var(--space-12)', paddingTop: 'var(--space-6)', borderTop: '1px solid #242424', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', gap: 'var(--space-4)', fontSize: 'var(--font-size-xs)', color: '#777777' }}>
             <p>&copy; {new Date().getFullYear()} AFRIDI RANGOONA. Crafted with Pakhtun Heritage, Dignity &amp; Pride for Khyber Pakhtunkhwa.</p>
-            <div style={{ display: 'flex', gap: 'var(--space-4)' }}>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'var(--space-3)' }}>
               <span>Verified 256-Bit SSL</span>
               <span>PCI-DSS Compliant</span>
               <span>Stripe Test Mode Ready</span>

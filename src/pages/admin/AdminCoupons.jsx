@@ -121,8 +121,8 @@ const AdminCoupons = () => {
       </div>
 
       {modalOpen && (
-        <div className="overlay anim-fade-in" onClick={() => setModalOpen(false)}>
-          <div className="card anim-slide-up" onClick={(e) => e.stopPropagation()} style={{ maxWidth: '480px', width: '90%', margin: '12vh auto', padding: 'var(--space-6)', backgroundColor: '#222', color: '#FFF', borderColor: '#444' }}>
+        <div className="overlay anim-fade-in" onClick={() => setModalOpen(false)} style={{ padding: 'var(--space-4)', overflowY: 'auto' }}>
+          <div className="card anim-slide-up" onClick={(e) => e.stopPropagation()} style={{ maxWidth: '480px', width: '100%', margin: '6vh auto', padding: 'clamp(var(--space-4), 4vw, var(--space-6))', maxHeight: '88vh', overflowY: 'auto', backgroundColor: '#222', color: '#FFF', borderColor: '#444' }}>
             <h3 style={{ marginBottom: 'var(--space-4)', color: '#FFF' }}>Create Promotional Coupon</h3>
 
             <form onSubmit={handleCreateCoupon}>

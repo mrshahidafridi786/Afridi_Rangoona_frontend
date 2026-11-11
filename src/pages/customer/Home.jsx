@@ -269,7 +269,7 @@ const Home = () => {
           </div>
 
           <div className="grid-3">
-            <div className="card" style={{ padding: 'var(--space-8)' }}>
+            <div className="card" style={{ padding: 'clamp(var(--space-5), 4vw, var(--space-8))' }}>
               <div style={{ color: 'var(--color-gold)', marginBottom: 'var(--space-3)' }}>★★★★★</div>
               <p style={{ fontStyle: 'italic', color: 'var(--color-text-secondary)', marginBottom: 'var(--space-4)', fontSize: 'var(--font-size-sm)' }}>
                 "The Double-Sole Kaptaan Chappal has the genuine weight and thick tyre sole we wear in the Hujra. Rugged, comfortable, and truly majestic."
@@ -278,7 +278,7 @@ const Home = () => {
               <span style={{ fontSize: 'var(--font-size-xs)', color: 'var(--color-text-muted)' }}>Khyber / Jamrud, KPK</span>
             </div>
 
-            <div className="card" style={{ padding: 'var(--space-8)' }}>
+            <div className="card" style={{ padding: 'clamp(var(--space-5), 4vw, var(--space-8))' }}>
               <div style={{ color: 'var(--color-gold)', marginBottom: 'var(--space-3)' }}>★★★★★</div>
               <p style={{ fontStyle: 'italic', color: 'var(--color-text-secondary)', marginBottom: 'var(--space-4)', fontSize: 'var(--font-size-sm)' }}>
                 "Got my pure Swati wool chadar delivered to Mardan in two days via cash on delivery. The warmth and pure wool finish prove the authenticity."
@@ -287,7 +287,7 @@ const Home = () => {
               <span style={{ fontSize: 'var(--font-size-xs)', color: 'var(--color-text-muted)' }}>Mardan, KPK</span>
             </div>
 
-            <div className="card" style={{ padding: 'var(--space-8)' }}>
+            <div className="card" style={{ padding: 'clamp(var(--space-5), 4vw, var(--space-8))' }}>
               <div style={{ color: 'var(--color-gold)', marginBottom: 'var(--space-3)' }}>★★★★★</div>
               <p style={{ fontStyle: 'italic', color: 'var(--color-text-secondary)', marginBottom: 'var(--space-4)', fontSize: 'var(--font-size-sm)' }}>
                 "Oud Al-Afridi is rich and long-lasting, perfect for Jummah and Eid gatherings. Afridi Rangoona honors the dignity and hospitality of Pakhtunkhwa."

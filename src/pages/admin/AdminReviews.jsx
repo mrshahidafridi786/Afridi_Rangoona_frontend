@@ -67,15 +67,15 @@ const AdminReviews = () => {
           </div>
         ) : (
           reviews.map((rev) => (
-            <div key={rev._id} style={{ backgroundColor: '#212121', border: '1px solid #333', borderRadius: 'var(--radius-md)', padding: 'var(--space-6)' }}>
-              <div className="flex-between" style={{ marginBottom: 'var(--space-3)' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)' }}>
+            <div key={rev._id} style={{ backgroundColor: '#212121', border: '1px solid #333', borderRadius: 'var(--radius-md)', padding: 'clamp(var(--space-4), 3vw, var(--space-6))' }}>
+              <div className="flex-between" style={{ marginBottom: 'var(--space-3)', flexWrap: 'wrap', gap: 'var(--space-3)' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)', minWidth: 0 }}>
                   <img
                     src={rev.product?.images?.[0] || 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=120&q=80'}
                     alt=""
-                    style={{ width: '40px', height: '50px', objectFit: 'cover', borderRadius: 'var(--radius-xs)' }}
+                    style={{ width: '40px', height: '50px', objectFit: 'cover', borderRadius: 'var(--radius-xs)', flexShrink: 0 }}
                   />
-                  <div>
+                  <div style={{ minWidth: 0 }}>
                     <h4 style={{ color: '#FFF', fontSize: 'var(--font-size-sm)' }}>{rev.product?.name}</h4>
                     <p style={{ color: '#888', fontSize: '11px' }}>
                       By {rev.user?.name || 'Patron'} &bull; {new Date(rev.createdAt).toLocaleDateString()}
@@ -83,7 +83,7 @@ const AdminReviews = () => {
                   </div>
                 </div>
 
-                <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)', flexShrink: 0 }}>
                   <StarRating rating={rev.rating} size={14} />
                   <span style={{ padding: '3px 8px', borderRadius: 'var(--radius-pill)', fontSize: '10px', fontWeight: 'bold', textTransform: 'uppercase', backgroundColor: rev.status === 'approved' ? 'rgba(74, 222, 128, 0.2)' : 'rgba(251, 191, 36, 0.2)', color: rev.status === 'approved' ? '#4ADE80' : '#FBBF24' }}>
                     {rev.status}
@@ -94,7 +94,7 @@ const AdminReviews = () => {
               {rev.title && <h5 style={{ color: '#E0E0E0', fontSize: 'var(--font-size-sm)', marginBottom: '4px' }}>{rev.title}</h5>}
               <p style={{ color: '#AAA', fontSize: 'var(--font-size-xs)', lineHeight: 1.5 }}>{rev.comment}</p>
 
-              <div style={{ display: 'flex', justifyContent: 'flex-end', gap: 'var(--space-2)', marginTop: 'var(--space-4)', paddingTop: 'var(--space-2)', borderTop: '1px solid #2B2B2B' }}>
+              <div style={{ display: 'flex', justifyContent: 'flex-end', flexWrap: 'wrap', gap: 'var(--space-2)', marginTop: 'var(--space-4)', paddingTop: 'var(--space-2)', borderTop: '1px solid #2B2B2B' }}>
                 {rev.status !== 'approved' && (
                   <button
                     type="button"

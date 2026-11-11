@@ -54,58 +54,36 @@ const Header = () => {
           justifyContent: 'space-between',
           height: 'var(--header-height)',
           flexWrap: 'nowrap',
-          gap: 'var(--space-3)'
+          gap: 'var(--space-2)'
         }}
       >
         
         {/* Left: Mobile Menu Toggle & Brand Logo with Project Name */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: 'clamp(var(--space-2), 1.2vw, var(--space-3))', flexShrink: 0 }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 'clamp(4px, 1.2vw, 12px)', flexShrink: 0, minWidth: 0 }}>
           <button
             className="btn-icon mobile-only"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle Navigation Menu"
           >
-            {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
+            {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
 
           <Link
             to="/"
             className="navbar-logo"
             aria-label="AFRIDI RANGOONA Home"
-            style={{ display: 'flex', alignItems: 'center', gap: '10px', textDecoration: 'none', flexShrink: 0 }}
+            style={{ display: 'flex', alignItems: 'center', gap: 'clamp(6px, 1.2vw, 10px)', textDecoration: 'none', flexShrink: 0 }}
           >
             <img
               src="/assets/logo/logo-icon.svg"
               alt="Afridi Rangoona Logo"
-              style={{
-                height: 'clamp(32px, 3.8vw, 40px)',
-                width: 'clamp(32px, 3.8vw, 40px)',
-                objectFit: 'contain',
-                borderRadius: '8px',
-                boxShadow: '0 2px 8px rgba(0,0,0,0.15)',
-                flexShrink: 0
-              }}
+              className="header-logo-img"
             />
             <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.15, flexShrink: 0 }}>
-              <span style={{
-                fontFamily: 'var(--font-display, "Playfair Display", serif)',
-                fontSize: 'clamp(1rem, 1.4vw, 1.25rem)',
-                fontWeight: 700,
-                letterSpacing: '0.06em',
-                color: 'var(--color-primary, #171717)',
-                whiteSpace: 'nowrap'
-              }}>
+              <span className="navbar-brand-title">
                 AFRIDI <span style={{ color: 'var(--color-accent, #C66A32)' }}>RANGOONA</span>
               </span>
-              <span style={{
-                fontSize: '0.55rem',
-                letterSpacing: '0.2em',
-                textTransform: 'uppercase',
-                color: 'var(--color-text-muted, #858585)',
-                fontWeight: 600,
-                marginTop: '1px',
-                whiteSpace: 'nowrap'
-              }}>
+              <span className="navbar-brand-sub">
                 Khyber Heritage
               </span>
             </div>
@@ -118,7 +96,7 @@ const Header = () => {
           style={{
             alignItems: 'center',
             justifyContent: 'center',
-            gap: 'clamp(var(--space-2), 1.2vw, var(--space-5))',
+            gap: 'clamp(8px, 1.1vw, 20px)',
             flexShrink: 1,
             flexWrap: 'nowrap'
           }}
@@ -141,7 +119,7 @@ const Header = () => {
         </nav>
 
         {/* Right: Search, Account, Wishlist, Cart */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: 'clamp(4px, 1.2vw, 10px)', flexShrink: 0 }}>
+        <div className="header-actions">
           {/* Search Trigger */}
           <button
             className="header-action-btn"
@@ -263,7 +241,7 @@ const Header = () => {
       {isSearchOpen && (
         <div style={{ backgroundColor: 'var(--color-surface)', borderTop: '1px solid var(--color-border)', padding: 'var(--space-3) 0' }}>
           <div className="container">
-            <form onSubmit={handleSearchSubmit} style={{ display: 'flex', gap: 'var(--space-3)' }}>
+            <form onSubmit={handleSearchSubmit} style={{ display: 'flex', flexWrap: 'wrap', gap: 'var(--space-2)' }}>
               <input
                 type="text"
                 autoFocus
@@ -271,7 +249,7 @@ const Header = () => {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="form-input"
-                style={{ flexGrow: 1 }}
+                style={{ flex: '1 1 200px', minWidth: 0 }}
               />
               <button type="submit" className="btn btn-primary btn-sm">
                 Search

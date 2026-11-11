@@ -107,8 +107,8 @@ const AdminCategories = () => {
       </div>
 
       {modalOpen && (
-        <div className="overlay anim-fade-in" onClick={() => setModalOpen(false)}>
-          <div className="card anim-slide-up" onClick={(e) => e.stopPropagation()} style={{ maxWidth: '480px', width: '90%', margin: '15vh auto', padding: 'var(--space-6)', backgroundColor: '#222', color: '#FFF', borderColor: '#444' }}>
+        <div className="overlay anim-fade-in" onClick={() => setModalOpen(false)} style={{ padding: 'var(--space-4)', overflowY: 'auto' }}>
+          <div className="card anim-slide-up" onClick={(e) => e.stopPropagation()} style={{ maxWidth: '480px', width: '100%', margin: '8vh auto', padding: 'clamp(var(--space-4), 4vw, var(--space-6))', maxHeight: '86vh', overflowY: 'auto', backgroundColor: '#222', color: '#FFF', borderColor: '#444' }}>
             <h3 style={{ marginBottom: 'var(--space-4)', color: '#FFF' }}>Create New Category</h3>
 
             <form onSubmit={handleCreateCategory}>

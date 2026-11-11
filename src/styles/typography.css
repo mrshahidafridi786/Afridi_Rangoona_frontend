@@ -13,39 +13,21 @@ h1, h2, h3, h4, h5, h6,
 }
 
 h1 {
-  font-size: var(--font-size-4xl);
-}
-
-@media (min-width: 768px) {
-  h1 {
-    font-size: var(--font-size-5xl);
-  }
-}
-
-@media (min-width: 1024px) {
-  h1 {
-    font-size: var(--font-size-6xl);
-  }
+  font-size: clamp(1.75rem, 5.5vw, var(--font-size-6xl));
 }
 
 h2 {
-  font-size: var(--font-size-3xl);
-  letter-spacing: 0.08em;
-}
-
-@media (min-width: 768px) {
-  h2 {
-    font-size: var(--font-size-4xl);
-  }
+  font-size: clamp(1.4rem, 4.2vw, var(--font-size-4xl));
+  letter-spacing: 0.06em;
 }
 
 h3 {
-  font-size: var(--font-size-2xl);
-  letter-spacing: 0.05em;
+  font-size: clamp(1.15rem, 3vw, var(--font-size-2xl));
+  letter-spacing: 0.04em;
 }
 
 h4 {
-  font-size: var(--font-size-xl);
+  font-size: clamp(1rem, 2.4vw, var(--font-size-xl));
 }
 
 h5 {
@@ -60,17 +42,17 @@ h6 {
 
 .eyebrow {
   font-family: var(--font-body);
-  font-size: var(--font-size-xs);
+  font-size: clamp(0.68rem, 2vw, var(--font-size-xs));
   font-weight: var(--font-weight-semibold);
   text-transform: uppercase;
-  letter-spacing: var(--letter-spacing-luxury);
+  letter-spacing: clamp(0.1em, 0.8vw, var(--letter-spacing-luxury));
   color: var(--color-accent);
   display: block;
   margin-bottom: var(--space-2);
 }
 
 .text-lead {
-  font-size: var(--font-size-lg);
+  font-size: clamp(0.95rem, 2.4vw, var(--font-size-lg));
   line-height: var(--line-height-relaxed);
   color: var(--color-text-secondary);
 }
@@ -90,10 +72,11 @@ h6 {
 .price-display {
   font-family: var(--font-body);
   font-weight: var(--font-weight-bold);
-  font-size: var(--font-size-lg);
+  font-size: clamp(0.9rem, 2.5vw, var(--font-size-lg));
   color: var(--color-primary);
   display: inline-flex;
   align-items: baseline;
+  flex-wrap: wrap;
   gap: var(--space-2);
 }
 

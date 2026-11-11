@@ -330,7 +330,7 @@ const AdminEditProduct = () => {
           </div>
         </div>
 
-        <div style={{ display: 'flex', justifyContent: 'flex-end', gap: 'var(--space-4)', marginTop: 'var(--space-8)' }}>
+        <div style={{ display: 'flex', justifyContent: 'flex-end', flexWrap: 'wrap', gap: 'var(--space-4)', marginTop: 'var(--space-8)' }}>
           <Link to="/admin/products" className="btn btn-ghost" style={{ color: '#AAA' }}>
             Cancel
           </Link>

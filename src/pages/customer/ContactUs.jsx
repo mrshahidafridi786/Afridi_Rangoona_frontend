@@ -38,10 +38,10 @@ const ContactUs = () => {
           </p>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'minmax(300px, 360px) 1fr', gap: 'var(--space-10)', alignItems: 'start' }}>
+        <div className="contact-layout-grid">
           
           {/* Left Column: Direct Atelier Information */}
-          <div className="card" style={{ padding: 'var(--space-8)' }}>
+          <div className="card" style={{ padding: 'clamp(var(--space-5), 4vw, var(--space-8))' }}>
             <h3 style={{ fontSize: 'var(--font-size-base)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: 'var(--space-6)' }}>
               Peshawar Hujra &amp; Workshop
             </h3>
@@ -72,7 +72,7 @@ const ContactUs = () => {
                 <Mail size={22} color="var(--color-accent)" style={{ flexShrink: 0 }} />
                 <div>
                   <h5 style={{ fontSize: 'var(--font-size-xs)', textTransform: 'uppercase', marginBottom: '2px' }}>Direct Inquiries</h5>
-                  <p style={{ color: 'var(--color-text-secondary)' }}>khidmat@afridirangoona.com</p>
+                  <p style={{ color: 'var(--color-text-secondary)', wordBreak: 'break-word' }}>khidmat@afridirangoona.com</p>
                 </div>
               </div>
 
@@ -89,7 +89,7 @@ const ContactUs = () => {
           </div>
 
           {/* Right Column: Interactive Dispatch Form */}
-          <form onSubmit={handleSubmit} className="card" style={{ padding: 'var(--space-8)' }}>
+          <form onSubmit={handleSubmit} className="card" style={{ padding: 'clamp(var(--space-5), 4vw, var(--space-8))' }}>
             <h3 style={{ fontSize: 'var(--font-size-base)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: 'var(--space-6)' }}>
               Send Us A Message
             </h3>
